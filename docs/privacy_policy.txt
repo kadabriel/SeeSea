@@ -1,0 +1,1 @@
+SeaSensor lagrer kun nødvendige måledata lokalt og deler aldri personopplysninger utenfor brukerens eget nettverk.
