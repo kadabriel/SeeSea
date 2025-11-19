@@ -1,0 +1,11 @@
+{
+  "appId": "seamonitor-local",
+  "version": "0.1.0",
+  "name": "SeaSensor Local",
+  "shortName": "SeaSensor",
+  "description": "Local execution bridge for SeaSensor",
+  "deviceTypes": ["action.devices.types.SENSOR"],
+  "appLaunchUrl": "/index.html",
+  "httpEnabled": true,
+  "execTransport": "HTTPS"
+}

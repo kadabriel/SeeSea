@@ -1,0 +1,15 @@
+Probe polarity check (two-wire ultrasonic capsules)
+
+Goal: Identify which lead is tied to VCC/drive and which to GND on the existing board before moving probes to an HC-SR04 PCB.
+
+Steps:
+1) Power the donor board normally (5V/GND) with no TRIG pulses running (idle).
+2) Measure DC voltage from each probe lead to GND:
+   - The lead that sits near VCC (e.g. ~5V or a solid pull-up) is the “+” side on that channel.
+   - The lead near 0V is the “-” side (reference) on that channel.
+   Note: On some boards you might see ~VCC/2 AC bias; pick the lead closest to GND as “-”.
+3) Mark the leads (tape/marker or photo) so you preserve polarity when moving them.
+4) On the HC-SR04 PCB, solder each probe with correct polarity to the corresponding TX/RX pads. Keep wires short and insulated.
+5) Test with the standard 10 µs TRIG + pulseIn(echo) sketch on Arduino Uno at 115200 bps. If probes work here, the JSN PCB was the issue.
+
+Safety: Power off before soldering. Double-check there is no short between the pads after moving the probes.

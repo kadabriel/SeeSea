@@ -1,0 +1,20 @@
+Til kundeservice,
+
+Jeg kjøpte en JSN-SR20-Y1 ultralydsensor (vanntett variant med dobbel probe) til prosjektet mitt, og etter kort tids bruk har jeg oppdaget at selve kretskortet som kontakten er loddet på er skadet. Konkret:
+
+1. Kortslutning mellom pluss og minus på probe-kontakten.
+   - På den ene kanalen (den som normalt skal ha GND på ytterringen) viser målinger at minusleder ikke har forbindelse til jord i det hele tatt, men i stedet ligger på samme potensial som VCC.
+   - Dette er ikke et måle- eller kablingsproblem på mitt oppsett. Jeg har bekreftet at ESP32-driveren leverer korrekte trig-signaler (3,3 V), og at de samme ledningene fungerer mot en vanlig, ikke-vanntett sensor. Feilen forblir selv når sensoren er frakoblet resten av systemet og måles direkte.
+
+2. Synlig skade på PCB-punktet som fører minusleder ut til kontakten.
+   - Loddeøyet/pad-en har en sprekk rundt hele ringen, og kobberbanen er delvis revet bort slik at kontakten ikke lenger har elektrisk forbindelse til jordplanet på kortet.
+   - Resultatet er at minusleder til proben i praksis er kortsluttet til pluss via det skadede området, og modulen kan verken sende eller motta ekko. Loggene fra firmware viser gjentatte «No echo rising edge»/«No echo falling edge», og målinger med multimeter gir bare ~16 mV på echo selv når TRIG blir aktivert.
+
+Vedlagt følger bilder av:
+- Probekontakten på PCB der loddeøyet er sprukket.
+- Multimeter-målinger som viser at minusleder ligger på VCC.
+
+Sensoren er dermed ubrukelig i nåværende tilstand. Jeg ber om å få en erstatningsenhet eller refundert kjøpesummen, siden feilen åpenbart ligger i produksjonen (mekanisk skade på kortet, ikke forårsaket av min bruk). Gi gjerne beskjed dersom dere trenger ytterligere informasjon eller serienummer.
+
+Mvh
+[Navn]

@@ -1,0 +1,36 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "config_store.c"
+        "scheduler.c"
+        "sensor_manager.c"
+        "bme280_sensor.c"
+        "ds18b20_sensor.c"
+        "ultrasonic_sensor.c"
+        "battery_monitor.c"
+        "display_manager.c"
+        "power_manager.c"
+        "google_bridge.c"
+        "mqtt_bridge.c"
+        "web_server.c"
+        "wifi_manager.c"
+        "i2c_scan.c"
+        "aht20_sensor.c"
+    INCLUDE_DIRS "include"
+    REQUIRES
+        esp_http_server
+        esp_event
+        esp_timer
+        esp_netif
+        nvs_flash
+        driver
+        esp_driver_gpio
+        esp_driver_i2c
+        esp_wifi
+        esp_adc
+        mdns
+        json
+        esp_http_client
+        esp-tls
+        mbedtls
+)

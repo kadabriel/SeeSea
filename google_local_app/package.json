@@ -1,0 +1,17 @@
+{
+  "name": "sea-local-home",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local Home SDK app for SeaSensor",
+  "scripts": {
+    "build": "tsc -p .",
+    "clean": "rm -rf build dist",
+    "bundle": "npm run build && mkdir -p dist && cp build/index.js dist/app.js && cp manifest.json dist/manifest.json"
+  },
+  "dependencies": {
+    "@google/local-home-sdk": "^1.3.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

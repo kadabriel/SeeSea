@@ -1,0 +1,11 @@
+Arduino Uno R3 hookup for JSN-SR20-Y1 (TRIG/ECHO mode)
+
+- VCC  -> Uno 5V
+- GND  -> Uno GND
+- TRIG -> Uno D9 (digital output)
+- ECHO -> Uno D8 (digital input, 5V tolerant)
+
+Notes:
+- No level shifting needed on Uno (5V I/O). Remove any series/level resistors used for ESP32.
+- Keep leads short; add 100 nF across VCC/GND at the JSN header if possible.
+- Serial Monitor at 115200 bps for the provided test sketch.

@@ -1,0 +1,20 @@
+Dear Support Team,
+
+I recently purchased a JSN-SR20-Y1 waterproof ultrasonic ranger (dual-probe version), and the PCB where the probe connector solders in is damaged straight out of the box. Specifically:
+
+1. Short between the probe’s positive and negative pins on the controller board.
+   - On one channel (the one that should expose GND on the outer ring), the negative lead has no continuity to ground at all but is instead tied to VCC when measured directly on the PCB.
+   - This is not a wiring issue on my side. I confirmed that the ESP32 driver delivers the correct 3.3 V trigger pulse and that the same wiring works with a regular (non‑waterproof) HC-SR04. The fault remains even when the JSN module is disconnected from everything else and measured in isolation.
+
+2. Visible damage at the PCB pad that routes the “minus” lead to the connector.
+   - The solder pad/annular ring is cracked, and the copper trace has partially lifted, so the probe contact no longer has an electrical path to the ground plane.
+   - As a result, the probe’s negative pin is effectively shorted to VCC via the cracked area, and the module can neither send nor receive an echo. Firmware logs report repeated “No echo rising edge/falling edge”, and multimeter readings on the echo line stay around 16 mV regardless of triggering.
+
+I’m attaching photos that show:
+- The damaged connector pad on the PCB.
+- Multimeter readings demonstrating that the probe “minus” lead is sitting at VCC instead of GND.
+
+Because of this manufacturing defect, the sensor is unusable. I’d like a replacement unit or a refund. Please let me know if you need the order number or serial number.
+
+Best regards,
+[Name]

@@ -1,0 +1,8 @@
+build/
+managed_components/
+*.bin
+*.elf
+*.log
+.DS_Store
+node_modules/
+google/secrets.private

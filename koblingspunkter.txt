@@ -1,0 +1,29 @@
+SeaSensor koblingspunkter (nåværende testoppsett)
+=================================================
+
+ESP32 devkit
+- GPIO21 (SDA) → SSD1306 + BME280 (I2C)
+- GPIO22 (SCL) → SSD1306 + BME280 (I2C)
+- GPIO4        → DS18B20 DQ (4,7 kΩ pull-up til 3,3 V)
+- GPIO27       → JSN-SR20-Y1 TRIG/ECHO kombinert (single-wire). Ingen seriemotstander i testen.
+- GPIO33       → Knapp til 3,3 V (firmware pull-down, aktiv høy)
+- 3,3 V/GND    → alle moduler
+
+JSN-SR20-Y1 (mode 0, single-wire)
+- VCC 3,3 V, GND felles
+- TRIG og ECHO sammen → GPIO27
+- Ingen seriemotstander i test; firmware bytter pinnen fra output (puls) til input (pull-up) for ekko
+
+DS18B20 vannprobe
+- Rød 3,3 V
+- Gul DQ → GPIO4 + 4,7 kΩ til 3,3 V
+- Svart GND
+
+Knapp
+- Én side til GPIO33, andre til 3,3 V. Firmware har pull-down og ser trykk som høy nivå.
+
+Batteri-ADC
+- Midlertidig frakoblet; GPIO32 er ledig i dette oppsettet. Hvis du kobler inn divider, merk at ultralyd nå ligger på 27, så 32 kan brukes for ADC senere.
+
+Hva som var tidligere (arkiv)
+- Tidligere brukte vi TRIG=32/ECHO=27. Nå er alt på 27 for single-wire. Pogo-planen med US_BUS er fortsatt på pause til videre.

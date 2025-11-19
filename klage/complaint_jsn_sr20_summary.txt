@@ -1,0 +1,22 @@
+Dear Seller,
+
+We’ve spent the last days troubleshooting the waterproof JSN-SR20-Y1 probe module and compared it against a standard HC-SR04 (and a non-waterproof probe of the same form factor). Summary of what we tried and observed:
+
+What works:
+- The same wiring and firmware drive a standard HC-SR04 without issues (TRIG/ECHO, 115200 baud monitor). ESP32 TRIG pin (GPIO26) is confirmed to deliver clean 3.3 V pulses, and the HC-SR04 returns valid echo pulses.
+- Power, ground, and TRIG reach the JSN board; TRIG is clearly visible at 3.3 V on the connector when measuring.
+
+What fails on the JSN-SR20-Y1:
+- ECHO on the JSN never rises above a few millivolts. The module shows no response to TRIG.
+- We cycled multiple timing profiles: high pulse widths 10/20/30/40/60 µs, startup delays 200–500 µs, and extended timeouts. None yielded an echo pulse.
+- Mode pad: we tried floating (Mode 0, TRIG/ECHO), and also soldered ~368 kΩ (Mode 4). No change—still no echo.
+- PCB inspection shows damage at the probe connector pad on one of the modules (the “minus” pad is cracked/lifted and touches VCC). Even on the undamaged module, there is still no echo output.
+
+Conclusion:
+- The ESP32 side and wiring are verified good (HC-SR04 works), so the JSN-SR20-Y1 modules we received appear defective or dead on arrival: they never drive the ECHO line. 
+- We would like a replacement or refund for the JSN-SR20-Y1 units, as they are unusable in their current state.
+
+If you need additional pictures or order details, we can provide those. Thank you for handling this.
+
+Best regards,
+[Name]

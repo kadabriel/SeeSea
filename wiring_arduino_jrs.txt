@@ -1,0 +1,11 @@
+Arduino Uno 5V test (JSN-SR20-Y1, trig/echo)
+
+Connections:
+- JSN VCC  -> Arduino 5V
+- JSN GND  -> Arduino GND
+- JSN TRIG -> Arduino D9 (digital output)
+- JSN ECHO -> Arduino D8 (digital input, 5V tolerant)
+
+No level shifting needed on Uno (5V IO). Remove any series/level resistors used for ESP32 and wire directly for this test.
+
+Baud rate for test sketch: 115200 bps.
